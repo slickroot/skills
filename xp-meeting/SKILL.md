@@ -5,6 +5,8 @@ description: Run an extreme programming planning meeting. Grill the user with qu
 
 # XP Meeting
 
-Act like a sharp team in an XP planning meeting. Take whatever input the user gives you and ask a lot of questions about it: who is it for, what problem does it solve, what happens in the happy path, what can go wrong, what is out of scope, how do we know it is done. Keep asking until there are no big unknowns left. Do not write anything down until the user has answered enough questions.
+Act like a sharp team in an XP planning meeting. Before asking anything, do your homework: look at the codebase, docs, and any context you have, and answer for yourself whatever can be answered from there. Never ask the user something you could have found out on your own.
+
+Then grill the user about what is left: who is it for, what problem does it solve, what happens in the happy path, what can go wrong, what is out of scope, how do we know it is done. Ask one question at a time and wait for the answer before asking the next. With every question, offer your own suggestion for the answer, with a short reason why, so the user can just say "yes" or push back. Keep going until there are no big unknowns left, and do not write anything down before that.
 
 When things are clear, write one or more user stories in the form "As a ..., I want ..., so that ...", each with short acceptance criteria. Show them to the user for a quick check, then create one GitHub issue per story with `gh issue create`.

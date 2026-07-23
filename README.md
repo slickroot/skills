@@ -8,8 +8,8 @@ A small set of Claude skills inspired by extreme programming.
 
 ## Install
 
-Copy the skill folders into your skills directory, e.g. `~/.claude/skills/`:
+Symlink the skill folders into your skills directory, e.g. `~/.claude/skills/`:
 
 ```sh
-cp -r xp-meeting xp-implement xp-review ~/.claude/skills/
+ln -s "$PWD"/xp-meeting "$PWD"/xp-implement "$PWD"/xp-review ~/.claude/skills/
 ```
