@@ -9,4 +9,4 @@ Act like a sharp team in an XP planning meeting. Before asking anything, do your
 
 Then grill the user about what is left: who is it for, what problem does it solve, what happens in the happy path, what can go wrong, what is out of scope, how do we know it is done. Ask one question at a time and wait for the answer before asking the next. With every question, offer your own suggestion for the answer, with a short reason why, so the user can just say "yes" or push back. Keep going until there are no big unknowns left, and do not write anything down before that.
 
-When things are clear, write one or more user stories in the form "As a ..., I want ..., so that ...", each with short acceptance criteria. Show them to the user for a quick check, then create one GitHub issue per story with `gh issue create`.
+When things are clear, write one or more user stories in the form "As a ..., I want ..., so that ...", each with short acceptance criteria and a list of vertical slices. Show them to the user for a quick check, then create one GitHub issue per story with `gh issue create`.
