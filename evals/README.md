@@ -6,20 +6,35 @@ A way to tell whether a change to a skill actually made it better, instead of ho
 
 Each skill gets a list of **checks** — things it should do, each answerable yes or no.
 
-Each thing you want to fix gets a **scenario** — one fixed prompt you run the skill against.
+A **scenario** is a real feature you were going to work on anyway. Every time you use the
+skill for real, that's a run. You don't invent prompts for the loop and you don't rerun
+them — you build the thing afterwards, so the prompt is spent.
 
-You loop one scenario at a time until it comes out good.
+The loop rides along with the work. It costs you one grading step per meeting.
 
 ## The loop
 
-1. Open a fresh Claude session in the real project.
-2. Run the skill on the scenario prompt, pasted exactly. Play yourself. Don't coach it —
-   if it goes wrong, let it, that is what you came to see.
+1. Use the skill on real work, in the real project. Play yourself. Don't coach it — if it
+   goes wrong, let it, that is what you came to see.
+2. Save the prompt as the next `scenarios/sN.md`, verbatim.
 3. Hand the session log to an agent along with the skill's `CHECKS.md`, and have it score.
 4. Change **one** thing in the SKILL.md.
-5. Run it again.
+5. Next time you use the skill, that's the next run.
 
 Give the agent nothing but the log and the checks. No history, no idea what you changed.
+
+## Reading the results
+
+There is no before/after on a fixed prompt — every scenario is different, because every
+scenario is real. So a single pass proves nothing; it might just have been an easy feature.
+What means something is a **streak across different scenarios**:
+
+- A check that fails run after run is a skill problem, and your edits aren't touching it.
+- A check that starts passing and keeps passing across several different features is fixed.
+- A check that swings is usually badly worded, not badly behaved. Reword it.
+
+Grade the same way every time or the runs aren't comparable — that is the whole reason the
+checks are written down before the run rather than after.
 
 ## Layout
 
@@ -28,7 +43,7 @@ evals/
   render.py            turns a session log into readable text
   xp-meeting/
     CHECKS.md          the checks, and a tally block to copy per run
-    scenarios/s1.md    one prompt per file
+    scenarios/         one prompt per file, in the order you ran them
     runs/              one tally per run
 ```
 
@@ -36,15 +51,14 @@ One directory per skill. Add `xp-implement/` and `xp-review/` when you get to th
 
 ## Housekeeping
 
-- Notice something wrong with a skill → new scenario.
-- Want to improve something → new scenario.
 - Stopped caring about a check → delete it.
-- Built the thing a scenario asks for → move it to `scenarios/archived/`. Once it exists in
-  the codebase the meeting's homework will find it, and the run stops measuring the skill.
-- Noticed something no check covers → new check.
+- Noticed something no check covers → new check. The notes section of a run is where these
+  come from.
+- A check keeps failing for a reason you don't care about → rewrite it or drop it. It can't
+  detect anything else while it's stuck.
 
-Checks and scenarios are yours to churn. The only rule worth keeping is **one edit per
-run**, otherwise you can't tell which edit moved anything.
+Checks are yours to churn. The only rule worth keeping is **one edit per run**, otherwise
+you can't tell which edit moved anything.
 
 ## Finding the session log
 
