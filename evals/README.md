@@ -6,9 +6,10 @@ A way to tell whether a change to a skill actually made it better, instead of ho
 
 Each skill gets a list of **checks** — things it should do, each answerable yes or no.
 
-A **scenario** is a real feature you were going to work on anyway. Every time you use the
-skill for real, that's a run. You don't invent prompts for the loop and you don't rerun
-them — you build the thing afterwards, so the prompt is spent.
+A **run** is one real use of the skill on work you were going to do anyway. There is no
+such thing as a fixed scenario here: you don't invent prompts for the loop and you can't
+rerun one, because you build the thing afterwards. The prompt is spent the moment the
+meeting ends. Every `/xp-meeting` is its own scenario, once.
 
 The loop rides along with the work. It costs you one grading step per meeting.
 
@@ -16,7 +17,8 @@ The loop rides along with the work. It costs you one grading step per meeting.
 
 1. Use the skill on real work, in the real project. Play yourself. Don't coach it — if it
    goes wrong, let it, that is what you came to see.
-2. Save the prompt as the next `scenarios/sN.md`, verbatim.
+2. Record the prompt verbatim in the run's tally, so you can read a verdict against what
+   you actually asked for.
 3. Hand the session log to an agent along with the skill's `CHECKS.md`, and have it score.
 4. Change **one** thing in the SKILL.md.
 5. Next time you use the skill, that's the next run.
@@ -25,9 +27,9 @@ Give the agent nothing but the log and the checks. No history, no idea what you 
 
 ## Reading the results
 
-There is no before/after on a fixed prompt — every scenario is different, because every
-scenario is real. So a single pass proves nothing; it might just have been an easy feature.
-What means something is a **streak across different scenarios**:
+There is no before/after on a fixed prompt — every run is a different piece of work,
+because every run is real. So a single pass proves nothing; it might just have been an easy
+feature. What means something is a **streak across different runs**:
 
 - A check that fails run after run is a skill problem, and your edits aren't touching it.
 - A check that starts passing and keeps passing across several different features is fixed.
@@ -43,8 +45,7 @@ evals/
   render.py            turns a session log into readable text
   xp-meeting/
     CHECKS.md          the checks, and a tally block to copy per run
-    scenarios/         one prompt per file, in the order you ran them
-    runs/              one tally per run
+    runs/              one tally per run, in the order you ran them
 ```
 
 One directory per skill. Add `xp-implement/` and `xp-review/` when you get to them.
