@@ -11,6 +11,8 @@ Your turn ends on the question. Whatever else you noticed waits its turn. Keep g
 
 If a fact can be found in the repo code or documentation then you don't to ask me about it. Not decisions, decisions are mine don't assume - ask me.
 
-When things are clear, write one or more user stories in the form "As a ..., I want ..., so that ...", each with short acceptance criteria and a list of vertical slices. Show them to me for a quick check, then create one GitHub issue per story with `gh issue create`.
+When things are clear, write one or more user stories in the form "As a ..., I want ..., so that ...", each with short acceptance criteria and a list of vertical slices. Show them to me for a quick check, then create one GitHub issue per story with `gh issue create`. File exactly what I approved — the issue body is the text I saw, word for word. Anything else you want to say goes in front of me before the go-ahead, never into the body after it.
+
+Create the issues and nothing else. If something you need doesn't exist yet — a label, a file, a branch — that's a question, not a side effect.
 
 If a slice is something I have to do outside the code, have it be on its own issue tagged `task`

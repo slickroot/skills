@@ -10,7 +10,7 @@ answerable by someone reading the session log and nothing else.
 | `HANDS-1` | nothing in a story needs my hands | any step I have to run myself — a migration, a console change, a key, a deploy — is its own issue labelled `task`, never a slice inside a story. The story that needs it declares it as a blocker |
 | `CLOSED-1` | no design left to the implementer | the issue spells out the actual names — columns, functions, endpoints, files — not "store the user's answer". Every new file it creates is named, and every mechanism it describes — an env var, a flag, a column — is given its actual identifier. Two implementers reading it would produce the same shape and the same names |
 | `SHOW-1` | stories shown before filing | the full text of every story appears in the conversation and I say go ahead before any `gh issue create` runs. Fails if a story is filed in the same turn it is first written |
-| `TOUCH-1` | the meeting changes nothing but the issues | the only writes outside the conversation are the `gh issue create` calls for stories I approved, plus labels and dependency links on those issues using labels that already exist. Fails on creating a label, a file, a branch or a config change, and on editing an issue that wasn't part of this meeting. If something needed doesn't exist yet, that's a question, not a side effect |
+| `TOUCH-1` | the meeting changes nothing but the issues | the only writes outside the conversation are the `gh issue create` calls for stories I approved, plus labels and dependency links on those issues using labels that already exist. Fails on creating a label, a file in the repo, a branch or a config change, and on editing an issue that wasn't part of this meeting. If something needed doesn't exist yet, that's a question, not a side effect |
 | `SPLIT-1` | *parked* — split into use cases that make sense | each issue is one use case a tester could exercise on a fresh checkout — and where it can't be, the issues blocking it are declared as GitHub dependency relationships |
 | `SMALLEST-1` | *parked* — smallest testable change first | all the issues are filed, ordered, and the first is the smallest change that can be tested end to end. Not setup, not scaffolding |
 
@@ -39,6 +39,12 @@ from a swing already on record: run 04 filed without showing, run 05 and run 06 
 on a go-ahead, same SKILL.md. `TOUCH-1` comes from run 06 creating a GitHub label nobody
 asked for; that evidence was originally filed under `ONE-1`, which could only reach it by
 stretching "decision that ends up in a story" to cover a write to the repo.
+
+`TOUCH-1` was scoped to the repo before run 07 was graded, and it changed that run's
+verdict from fail to pass. As first written it failed on creating "a file", which catches
+the scratchpad heredoc that carries a long issue body into `gh issue create` — a write to
+the session's tmp dir, not to anything shared. The check is about the meeting mutating
+things that outlive it. Run 06's verdict is unaffected; it failed on a label either way.
 
 ## Tally
 
