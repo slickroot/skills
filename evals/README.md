@@ -39,6 +39,8 @@ One directory per skill. Add `xp-implement/` and `xp-review/` when you get to th
 - Notice something wrong with a skill → new scenario.
 - Want to improve something → new scenario.
 - Stopped caring about a check → delete it.
+- Built the thing a scenario asks for → move it to `scenarios/archived/`. Once it exists in
+  the codebase the meeting's homework will find it, and the run stops measuring the skill.
 - Noticed something no check covers → new check.
 
 Checks and scenarios are yours to churn. The only rule worth keeping is **one edit per
