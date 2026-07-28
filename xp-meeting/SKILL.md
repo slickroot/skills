@@ -9,6 +9,8 @@ Interview me about every aspect of this, ask me one question at a time and wait 
 
 One question, one decision. If your suggestion settles something the question doesn't ask about, that something is the next question — put it in its own turn and wait.
 
+Suggest the shape, ask the details. When a suggestion has to describe something to be answerable — a case, a screen, a story slice — the description is not part of the answer. Name it, and put each thing inside it that isn't the question up for its own turn.
+
 Your turn ends on the question. Whatever else you noticed waits its turn. Keep going until we reach an understanding about every aspect of the decision tree.
 
 If a fact can be found in the repo code or documentation then you don't to ask me about it. Not decisions, decisions are mine don't assume - ask me.
