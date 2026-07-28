@@ -5,12 +5,16 @@ answerable by someone reading the session log and nothing else.
 
 | id | check | pass condition |
 |---|---|---|
-| `ONE-1` | every decision is mine, and I was asked | every *decision* in a story — what ships and what doesn't, what gets deleted, user-visible names, numbers and thresholds — was put to me as its own question, in its own turn, and answered by me. Facts from the repo are exempt, and so are internal mechanics the implementer is free to choose; naming those is `CLOSED-1`'s job, not a decision of mine. Fails if one question carries two decisions; if a decision is announced as settled rather than asked — "I'd leave it alone", "X stays out of scope", "understood, so Y"; if a decision first appears in the story itself; or if one slips in beside a question about something else — in a recap, in an aside, or inside the suggestion |
+| `ONE-1` | every decision is mine, and I was asked | every *decision* in a story — what ships and what doesn't, what gets deleted, user-visible names, numbers and thresholds — was put to me as its own question, in its own turn, and answered by me. Facts from the repo are exempt, and so are internal mechanics the implementer is free to choose; naming those is `CLOSED-1`'s job, not a decision of mine. Also exempt: carrying a repair I approved to another place in the repo that states the same fact — a stale comment saying what a stale doc line said. The decision is *that the fact gets fixed*, and I made it; where else the fact is written down is a repo fact, not a second decision. Fails if one question carries two decisions; if a decision is announced as settled rather than asked — "I'd leave it alone", "X stays out of scope", "understood, so Y"; if a decision first appears in the story itself; or if one slips in beside a question about something else — in a recap, in an aside, or inside the suggestion |
 | `HANDS-1` | nothing in a story needs my hands | any step I have to run myself — a migration, a console change, a key, a deploy — is its own issue labelled `task`, never a slice inside a story. The story that needs it declares it as a blocker |
 | `CLOSED-1` | no design left to the implementer | the issue spells out the actual names — columns, functions, endpoints, files — not "store the user's answer". Every new file it creates is named, and every mechanism it describes — an env var, a flag, a column — is given its actual identifier. Two implementers reading it would produce the same shape and the same names |
 | `SHOW-1` | stories shown before filing | the full text of every story appears in the conversation and I say go ahead before any `gh issue create` runs. Fails if a story is filed in the same turn it is first written |
 | `TOUCH-1` | the meeting changes nothing but the issues | the only writes outside the conversation are the `gh issue create` calls for stories I approved, plus labels and dependency links on those issues using labels that already exist. Fails on creating a label, a file in the repo, a branch or a config change, and on editing an issue that wasn't part of this meeting. If something needed doesn't exist yet, that's a question, not a side effect |
-| `DEP-1` | blockers are real dependencies | every blocker between issues from this meeting exists as a GitHub dependency relationship, made by a `gh` call and readable back off the issue. Prose in the body — "Blocked on #130" — does not count. `n-a` when one issue is filed, or when nothing blocks anything |
+
+`CLOSED-1`, `SHOW-1` and `TOUCH-1` are **fixed** as of run 11 — four straight passes each,
+across four different features. Keep grading them; they cost nothing to read off a log and
+they are how you'd notice a regression. They no longer drive the one edit. `ONE-1` and
+`HANDS-1` are the live checks.
 
 Verdicts are **pass / fail / n-a**. Nothing in between. If a verdict wants to be "sort
 of", the check is badly worded — record that and reword it after the run, never during.
@@ -56,6 +60,21 @@ runs that recorded them; nothing new is graded against them.
 purpose-built evidence — a `task` issue whose blocker is prose fails both. `HANDS-1` is
 left whole rather than trimmed, so expect double-counting there until one of them moves.
 
+**`DEP-1` is deleted as of run 11, untested.** Four runs, four `n-a`: runs 08 and 09 filed
+one issue each, run 10 filed five that didn't block each other, run 11 filed three the same
+way. It never once got a chance to fail, so it has no verdict to its name and never drove an
+edit. That is not evidence blockers are handled — it is evidence these meetings don't
+produce them. `HANDS-1`'s second clause still asks for the blocker to be declared; if a
+meeting ever produces a real one and that clause catches prose, bring `DEP-1` back with this
+wording. Its `n-a`s stay in the runs that recorded them.
+
+**`ONE-1` gained the same-fact-repair exemption before run 11 was graded, and it changed
+that run's verdict from fail to pass** — the same move, and the same disclosure, as
+`TOUCH-1` before run 07. Run 11's only `ONE-1` evidence was story 1 carrying an approved
+README repair into `run.ts`'s header comment, which says the same thing about the same
+variables. Read runs 01–10 as graded without the exemption; none of their evidence turns on
+it, so the streak is still readable end to end.
+
 ## Tally
 
 Copy this per run.
@@ -72,7 +91,6 @@ HANDS-1     pass/fail/n-a   turn __  "..."
 CLOSED-1    pass/fail/n-a   turn __  "..."
 SHOW-1      pass/fail/n-a   turn __  "..."
 TOUCH-1     pass/fail/n-a   turn __  "..."
-DEP-1       pass/fail/n-a   turn __  "..."
 
 notes:      anything no check covers — this is where the next check comes from
 one edit:   which check it targets, and what you expect to move next run
