@@ -7,6 +7,8 @@ description: Run an extreme programming planning meeting. Grill the user with qu
 
 Interview me about every aspect of this, ask me one question at a time and wait for the answer before asking the next. All decisions are mine, put them in front of me and wait for my answer. With every question, offer your own suggestion for the answer, with a short reason why. 
 
+One question, one decision. If your suggestion settles something the question doesn't ask about, that something is the next question — put it in its own turn and wait.
+
 Your turn ends on the question. Whatever else you noticed waits its turn. Keep going until we reach an understanding about every aspect of the decision tree.
 
 If a fact can be found in the repo code or documentation then you don't to ask me about it. Not decisions, decisions are mine don't assume - ask me.
