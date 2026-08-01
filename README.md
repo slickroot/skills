@@ -8,8 +8,9 @@ Now with AI coding agents, this is my chance to finally explore it. I'm super ex
 
 ## The skills
 
-The three skills follow the XP loop: plan together, build in small steps, review together.
+The skills follow the XP loop: plan together, build in small steps, review together.
 
+- **[xp-stories](xp-stories/SKILL.md)** — turns raw input (feedback, complaints, ideas) into a ranked stack of small story cards. It digs for the pain behind what I asked for, splits by user activity, and gates every card on three tests: can I demo it, is it under 3–5 scenarios, is it still useful shipped alone. New and still rough — it only runs when I type `/xp-stories` myself, and the XP-spec and XP-spike it hands off to don't exist yet.
 - **[xp-meeting](xp-meeting/SKILL.md)** — a planning meeting. The agent does its homework on the codebase first, then asks you one question at a time (always with its own suggestion) until the idea is clear, and files the resulting user stories as GitHub issues.
 - **[xp-implement](xp-implement/SKILL.md)** — takes a GitHub issue, works in a fresh git worktree, splits the story into thin vertical slices, builds each slice with TDD, and opens a PR linked to the issue.
 - **[xp-review](xp-review/SKILL.md)** — takes a PR, explains in plain words what was done, walks through the code like a pair partner, and answers your questions. You are the reviewer; it discusses the design and coding patterns and gives a clear verdict.
@@ -19,7 +20,7 @@ The three skills follow the XP loop: plan together, build in small steps, review
 Symlink the skill folders into your skills directory, e.g. `~/.claude/skills/`:
 
 ```sh
-ln -s "$PWD"/xp-meeting "$PWD"/xp-implement "$PWD"/xp-review ~/.claude/skills/
+ln -s "$PWD"/xp-stories "$PWD"/xp-meeting "$PWD"/xp-implement "$PWD"/xp-review ~/.claude/skills/
 ```
 
 Symlinks mean any edit in this repo is live right away — no reinstalling.
