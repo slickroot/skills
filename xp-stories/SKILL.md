@@ -8,6 +8,8 @@ disable-model-invocation: true
 
 Turn my input (feedback, complaints, ideas) into a ranked stack of small story cards. No design talk, no specs, no code discussion.
 
+Ask me one question at a time and wait for the answer before asking the next. Your turn ends on the question. The process below is the order you work through, not a list to hand me.
+
 ## Output
 
 Ranked story cards. Each card has exactly:
