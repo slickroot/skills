@@ -48,7 +48,7 @@ evals/
     runs/              one tally per run, in the order you ran them
 ```
 
-One directory per skill. Add `xp-implement/` and `xp-review/` when you get to them.
+One directory per skill. Add `xp-implement/` when you get to it.
 
 ## Housekeeping
 
