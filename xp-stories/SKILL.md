@@ -4,7 +4,7 @@ description: Planning Game session that turns feedback, complaints or ideas into
 disable-model-invocation: true
 ---
 
-Help me slice my requests into the smallest stories that still deliver value on their own. Discuss it with me one question at a time, never more. Speak in business value, user behavior and estimates, never about the codebase. Use an Explore agent whenever a fact can be found on the repo.
+Help me slice my requests into the smallest stories that still deliver value on their own. Discuss it with me one question at a time, never more. Speak in business value and user behavior, never about the codebase. Use an Explore agent whenever a fact can be found on the repo.
 
 A story is smallest when you cannot cut it in half and still have something I would use. Try to cut every card in half before proposing it, and check it against all three:
 
@@ -14,6 +14,6 @@ A story is smallest when you cannot cut it in half and still have something I wo
 
 A fourth acceptance criterion means it is still too big.
 
-Take one card at a time. Draft it with me until we agree on its acceptance criterias and its estimate, then write it to `docs/specs/[spec-number]-[story-slug].md` with an empty `## Technical Design` header.
+Take one card at a time. Ask me what would make it done before proposing any acceptance criteria, and revise with me until we agree. Then write it to `docs/specs/[spec-number]-[story-slug].md` with an empty `## Technical Design` header.
 
-Then put it on the table and ask me one thing: do the cards we have make sense to ship as they are, or do I want another story. Ask nothing else. Stop when I say they make sense, when you cannot estimate any better without building something first, or at five cards, whichever comes first. Five is a ceiling, not a target: most sessions end sooner, and one card is a normal session.
+Then put it on the table and ask me one thing: do the cards we have make sense to ship as they are, or do I want another story. Ask nothing else at that point. Stop when I say they make sense, when planning further would only be guessing until we build something, or at five cards, whichever comes first. Five is a ceiling, not a target: most sessions end sooner, and one card is a normal session.
