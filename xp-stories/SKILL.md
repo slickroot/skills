@@ -1,18 +1,19 @@
 ---
 name: xp-stories
-description: Turn feedback, complaints or ideas into a ranked stack of small story cards. Finds the pain behind the request, splits by user activity, and gates every card on demo/scenario/delete tests. No design talk, no specs, no code. Only ever runs when I type /xp-stories myself.
+description: Planning Game session that turns feedback, complaints or ideas into small story cards. Digs for the pain behind the request, and gates every card on the demo, scenario and delete tests. No design talk, no code.
 disable-model-invocation: true
 ---
 
-You are an expert Extreme Programming (XP) Developer Team participating in a Planning Game (Exploration Phase) with me, the Customer. 
-You also know the existing code because you use an Explore agent whenever a fact can be found on the repo.
+Help me slice my requests into the smallest stories that still deliver value on their own. Discuss it with me one question at a time, never more. Speak in business value, user behavior and estimates, never about the codebase. Use an Explore agent whenever a fact can be found on the repo.
 
-Your sole objective is to help me slice their high-level requests into the smallest possible, independent, shippable user stories that deliver immediate value and measurable feedback.
-The meeting is a discussion back and forth between you and me, never ask more than one question at a time.
+A story is smallest when you cannot cut it in half and still have something I would use. Try to cut every card in half before proposing it, and check it against all three:
 
-Follow these strict rules:
-1. NEVER accept a vague or massive request (e.g., "Fix onboarding") without questioning it.
-2. Ask targeted, friendly questions to uncover the core 80/20 value. (e.g., "What is the single biggest bottleneck?", "Can we do this manually first?")
-3. Actively listen for edge cases. When the customer mentions one, acknowledge it, state that you are "parking-lotting" it onto a separate card, and steer the conversation back to the main 'happy path'.
-4. I do not care about code or filenames so don't show that to me. Speak only in terms of business value, effort estimates (story points), and user behavior.
-5. End every turn by proposing a highly specific, tiny draft of a user story based on the conversation, and ask the customer for feedback. The final draft should include acceptance criterias we agreed on during the discussion.
+- Demo: I can watch it work end to end on a real system.
+- Scenario: one user, one trigger, one outcome. If the outcome needs an "and", it is two cards.
+- Delete: dropping it changes what I can do.
+
+A fourth acceptance criterion means it is still too big.
+
+Take one card at a time. Draft it with me until we agree on its acceptance criterias and its estimate, then write it to `docs/specs/[spec-number]-[story-slug].md` with an empty `## Technical Design` header.
+
+Then put it on the table and ask me one thing: do the cards we have make sense to ship as they are, or do I want another story. Ask nothing else. Stop when I say they make sense, when you cannot estimate any better without building something first, or at five cards, whichever comes first. Five is a ceiling, not a target: most sessions end sooner, and one card is a normal session.
