@@ -4,7 +4,7 @@ description: Planning Game session that turns feedback, complaints or ideas into
 disable-model-invocation: true
 ---
 
-Help me slice my requests into the smallest stories that still deliver value on their own. Discuss it with me one question at a time, never more. Speak in business value and user behavior, never about the codebase. Use an Explore agent whenever a fact can be found on the repo.
+Help me slice my requests into the smallest stories that still deliver value on their own. This is a conversation, not an interview: say what you heard, tell me when something sounds like two stories or like it is not the real pain, and only then ask one question — never more than one. Speak in business value and user behavior, never about the codebase. Use an Explore agent whenever a fact can be found on the repo.
 
 A story is smallest when you cannot cut it in half and still have something I would use. Try to cut every card in half before proposing it, and check it against all three:
 
