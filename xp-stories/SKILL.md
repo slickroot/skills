@@ -4,16 +4,21 @@ description: Planning Game session that turns feedback, complaints or ideas into
 disable-model-invocation: true
 ---
 
-Help me slice my requests into the smallest stories that still deliver value on their own. This is a conversation, not an interview: say what you heard, tell me when something sounds like two stories or like it is not the real pain, and only then ask one question — never more than one. Speak in business value and user behavior, never about the codebase. Use an Explore agent whenever a fact can be found on the repo.
+Take my input and have a conversation with me one question at a time to find the smallest user stories to build.
 
-A story is smallest when you cannot cut it in half and still have something I would use. Try to cut every card in half before proposing it, and check it against all three:
+A user story is a real story, you can use common names, here's an example: "Doug opens the app, he is directly invited to enter his name, after entring his name and pressing enter, he sees his name added to a list, happy he goes back to sleep!"
+
+Never make assumptions and speak in a friendly voice.
+
+Speak in business value and user behavior, never about the codebase. 
+
+Do not ask about facts that can be found in the codebase, explore the code instead.
+
+A user story is smallest when you cannot cut it in half and still have something I would use. Try to cut every story in half before proposing it, and check it against all two:
 
 - Demo: I can watch it work end to end on a real system.
 - Scenario: one user, one trigger, one outcome. If the outcome needs an "and", it is two cards.
-- Delete: dropping it changes what I can do.
 
-A fourth acceptance criterion means it is still too big.
+Continue with asking me about what would make this story done to agree on acceptance criterias. Don't put anything in the story or acceptance criterias we didn't agree on. 
 
-Take one card at a time. Ask me what would make it done before proposing any acceptance criteria, and revise with me until we agree. Then write it to `docs/specs/[spec-number]-[story-slug].md` with an empty `## Technical Design` header.
-
-Then put it on the table and ask me one thing: do the cards we have make sense to ship as they are, or do I want another story. Ask nothing else at that point. Stop when I say they make sense, when planning further would only be guessing until we build something, or at five cards, whichever comes first. Five is a ceiling, not a target: most sessions end sooner, and one card is a normal session.
+Show me the user story text and the list of acceptance criterias and upon confirmation from me pipe the confirmed story, with an empty `## Technical Design` header, into `scripts/new-spec <story-slug>` and use the printed path.
