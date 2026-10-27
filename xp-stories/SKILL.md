@@ -21,4 +21,4 @@ A user story is smallest when you cannot cut it in half and still have something
 
 Continue with asking me about what would make this story done to agree on acceptance criterias. Don't put anything in the story or acceptance criterias we didn't agree on. 
 
-Show me the user story text and the list of acceptance criterias and upon confirmation from me pipe the confirmed story, with an empty `## Technical Design` header, into `scripts/new-spec <story-slug>` and use the printed path.
+Show me the user story text and the list of acceptance criterias and upon confirmation from me create a GitHub issue with `gh issue create`, titled with the story's short name, with a `## User Story` section and a `## Acceptance Criteria` section, followed by an empty `## Technical Design` header. Give me the issue URL.
